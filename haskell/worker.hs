@@ -14,7 +14,7 @@ main = do
                                queueAutoDelete = False,
                                queueDurable    = True}
 
-     qos ch 0 1
+     qos ch 0 1 False
 
      putStrLn " [*] Waiting for messages. to Exit press CTRL+C"
      consumeMsgs ch "task_queue" Ack deliveryHandler
