@@ -26,8 +26,8 @@ main = do
 deliveryHandler :: (Message, Envelope) -> IO ()
 deliveryHandler (msg, metadata) = do
   putStrLn $ " [x] Received " ++ body
-  -- threadDelay (1000 * n)
-  putStrLn $ " [x] Done"
+  threadDelay (1000000 * n)
+  putStrLn $ " [x] Done in " ++ show n ++ " seconds"
   ackEnv metadata
   where
     body = (BL.unpack $ msgBody msg)
